@@ -1,0 +1,1 @@
+import{j as t,c as s}from"./index-DerKfh_i.js";function o({className:a,...r}){return t.jsx("div",{"data-slot":"card",className:s("bg-card text-card-foreground rounded-xl border shadow-sm",a),...r})}function n({className:a,...r}){return t.jsx("div",{"data-slot":"card-content",className:s("p-6 pt-0",a),...r})}export{o as C,n as a};

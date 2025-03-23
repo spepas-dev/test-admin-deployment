@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 5% 12%);
+  
+  /* Primary Colors (Warm Orange/Yellow) */
+  --primary: hsl(39 91% 87%);
+  --primary-light: hsl(39 91% 92%);
+  --primary-dark: hsl(39 91% 82%);
+  --primary-foreground: hsl(39 91% 10%);
+  
+  /* Secondary Colors (Purple/Blue) */
+  --secondary: hsl(244 83% 57%);
+  --secondary-light: hsl(244 83% 62%);
+  --secondary-dark: hsl(244 83% 52%);
+  --secondary-foreground: hsl(0 0% 100%);
+  
+  /* Neutral/Supporting Colors */
+  --muted: hsl(244 20% 96%);
+  --muted-foreground: hsl(244 20% 45%);
+  --accent: hsl(39 70% 94%);
+  --accent-foreground: hsl(244 83% 25%);
+  
+  /* UI Elements */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 5% 12%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 5% 12%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(244 20% 92%);
+  --input: hsl(244 20% 92%);
+  --ring: hsl(39 91% 87%);
+  
+  /* Chart Colors */
+  --chart-1: hsl(39 91% 87%);  /* Primary */
+  --chart-2: hsl(244 83% 57%); /* Secondary */
+  --chart-3: hsl(39 70% 67%);  /* Primary Variant */
+  --chart-4: hsl(244 63% 67%); /* Secondary Variant */
+  --chart-5: hsl(270 70% 67%); /* Complementary */
+  
+  /* Sidebar Specific */
+  --sidebar: hsl(244 83% 57%);
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(39 91% 87%);
+  --sidebar-primary-foreground: hsl(244 83% 57%);
+  --sidebar-accent: hsl(244 83% 62%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(244 83% 52%);
+  --sidebar-ring: hsl(39 91% 87%);
+  
+  --radius: 0.6rem;
+}
+
+.dark {
+  --background: hsl(244 30% 10%);
+  --foreground: hsl(0 0% 98%);
+  
+  /* Primary Colors - Dark Theme */
+  --primary: hsl(39 91% 67%);
+  --primary-light: hsl(39 91% 72%);
+  --primary-dark: hsl(39 91% 62%);
+  --primary-foreground: hsl(244 30% 10%);
+  
+  /* Secondary Colors - Dark Theme */
+  --secondary: hsl(244 73% 67%);
+  --secondary-light: hsl(244 73% 72%);
+  --secondary-dark: hsl(244 73% 62%);
+  --secondary-foreground: hsl(0 0% 100%);
+  
+  /* Neutral/Supporting Colors */
+  --muted: hsl(244 20% 16%);
+  --muted-foreground: hsl(244 20% 65%);
+  --accent: hsl(39 30% 16%);
+  --accent-foreground: hsl(39 91% 87%);
+  
+  /* UI Elements */
+  --card: hsl(244 30% 12%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(244 30% 12%);
+  --popover-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(244 30% 20%);
+  --input: hsl(244 30% 20%);
+  --ring: hsl(39 91% 67%);
+  
+  /* Chart Colors - Dark Theme */
+  --chart-1: hsl(39 91% 67%);
+  --chart-2: hsl(244 73% 67%);
+  --chart-3: hsl(39 70% 57%);
+  --chart-4: hsl(244 63% 57%);
+  --chart-5: hsl(270 70% 57%);
+  
+  /* Sidebar Specific - Dark Theme */
+  --sidebar: hsl(244 83% 47%);
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(39 91% 67%);
+  --sidebar-primary-foreground: hsl(244 30% 10%);
+  --sidebar-accent: hsl(244 73% 52%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(244 73% 42%);
+  --sidebar-ring: hsl(39 91% 67%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
