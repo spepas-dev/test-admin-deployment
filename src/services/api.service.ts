@@ -9,6 +9,11 @@ export class ApiService {
   }
 
   static async post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+    const response = await axiosInstance.post<T>(url, data, config);
+    return response.data;
+  }
+
+  static async postauth<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
     const response = await axiosInstanceAuth.post<T>(url, data, config);
     return response.data;
   }

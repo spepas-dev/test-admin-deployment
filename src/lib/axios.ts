@@ -13,7 +13,7 @@ export const axiosInstance = axios.create({
 });
 
 export const axiosInstanceAuth = axios.create({
-  baseURL: import.meta.env.VITE_API_URL + '/api',
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
