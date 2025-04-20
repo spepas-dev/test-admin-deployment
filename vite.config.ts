@@ -97,14 +97,12 @@ export default ({ mode }: { mode: string }) => {
     resolve: {
       alias: {
         '@': resolve(__dirname, './src')
-        // src: '/src'
       }
     },
     build: {
       outDir: './build'
     },
     server: {
-      // port: 5173,
       port: 3000,
       host: 'localhost',
       proxy: {
