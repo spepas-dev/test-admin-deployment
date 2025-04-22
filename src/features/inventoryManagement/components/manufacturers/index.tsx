@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-
 // import { ManufacturesService } from '../../services/manufactures.services';
 import { AuthService } from '@/services/auth.service';
+
 import { Manufacturer } from '../../types';
 import { ManufacturerDialog } from './manufacturerDialog';
 import { ManufacturerTable } from './manufacturerTable';

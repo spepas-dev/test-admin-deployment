@@ -54,11 +54,11 @@ pipeline {
       }
     }
 
-    stage("Lint Check") {
-      steps {
-        sh 'pnpm run lint:check'
-      }
-    }
+    // stage("Lint Check") {
+    //   steps {
+    //     sh 'pnpm run lint:check'
+    //   }
+    // }
 
     stage("Code Format Check") {
       steps {

@@ -1,4 +1,5 @@
 import './index.css';
+
 import { init } from '@elastic/apm-rum';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
