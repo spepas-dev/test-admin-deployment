@@ -36,13 +36,13 @@ pipeline {
         sh "[ -d pipeline ] || mkdir pipeline"
         dir("pipeline") {
           // Add your jenkins automation url to url field
-          git branch: 'main', credentialsId: 'github', url: 'https://github.com/spepas-dev/test-admin-deployment'
+          git branch: 'main', credentialsId: 'github', url: 'https://github.com/spepas-dev/spepas-jenkins-automation'
           script {
             groovyMethods = load("functions.groovy")
           }
         }
         // Add your client app github url to url field
-        git branch: 'main', credentialsId: 'github', url: ''
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/spepas-dev/test-admin-deployment'
         sh """
           echo VITE_NODE_ENV=production > .env
           echo VITE_API_URL=https://api.spepas.com >> .env
@@ -50,19 +50,19 @@ pipeline {
           echo VITE_ELASTIC_APM_SERVER_TOKEN=$ELASTIC_APM_SERVER_TOKEN >> .env
           cat .env
         """
-        sh 'npm install'
+        sh 'pnpm install'
       }
     }
 
     stage("Lint Check") {
       steps {
-        sh 'npm run lint:check'
+        sh 'pnpm run lint:check'
       }
     }
 
     stage("Code Format Check") {
       steps {
-        sh 'npm run prettier:check'
+        sh 'pnpm run prettier:check'
       }
     }
 
