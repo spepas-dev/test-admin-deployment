@@ -50,19 +50,19 @@ pipeline {
           echo VITE_ELASTIC_APM_SERVER_TOKEN=$ELASTIC_APM_SERVER_TOKEN >> .env
           cat .env
         """
-        sh 'pnpm install'
+        sh 'npm install'
       }
     }
 
     stage("Lint Check") {
       steps {
-        sh 'pnpm run lint:check'
+        sh 'npm run lint:check'
       }
     }
 
     stage("Code Format Check") {
       steps {
-        sh 'pnpm run prettier:check'
+        sh 'npm run prettier:check'
       }
     }
 
