@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { Car, ChevronRight, Factory, Globe, Plus, Settings } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
+// import { ManufacturesService } from '../../services/manufactures.services';
+import { AuthService } from '@/services/auth.service';
 import { Manufacturer } from '../../types';
 import { ManufacturerDialog } from './manufacturerDialog';
 import { ManufacturerTable } from './manufacturerTable';
@@ -55,6 +57,18 @@ export default function ManufacturersPage() {
       trendUp: true
     }
   ];
+
+  useEffect(() => {
+    const queryManufacturers = async () => {
+      await AuthService.getManufactures();
+    };
+    try {
+      const data = queryManufacturers();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <div className="p-8 space-y-8">

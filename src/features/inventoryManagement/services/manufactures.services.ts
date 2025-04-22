@@ -18,14 +18,24 @@ export class ManufacturesService {
   /**
    * Get all manufactures with optional filtering
    */
-  static async getManufactures(params?: { search?: string; sort?: string; page?: number; limit?: number; manufacturerId?: string }) {
-    return ApiService.get<{
-      data: Manufacturer[];
-      total: number;
-      page: number;
-      limit: number;
-    }>(`${ALL_MANUFACTURES_ENDPOINT}`, { params });
-  }
+  // static async getManufactures(params?: { search?: string; sort?: string; page?: number; limit?: number; manufacturerId?: string }) {
+  //   return ApiService.get<{
+  //     data: Manufacturer[];
+  //     total: number;
+  //     page: number;
+  //     limit: number;
+  //   }>(`${ALL_MANUFACTURES_ENDPOINT}`, { params });
+  // }
+
+  // static async getManufactures() {
+  //   // return ApiService.get<{
+  //   //   data: Manufacturer[];
+  //   //   total: number;
+  //   //   page: number;
+  //   //   limit: number;
+  //   // }>(`${ALL_MANUFACTURES_ENDPOINT}`, { params });
+  //   return ApiService.get<unknown>('/inventry/car-manufacturers-all');
+  // }
 
   /**
    * Get a single brand by ID

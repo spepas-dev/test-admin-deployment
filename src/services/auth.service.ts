@@ -12,7 +12,11 @@ interface AuthResponse {
 
 export class AuthService {
   static async login(email: string, password: string) {
-    return ApiService.postauth<AuthResponse>('/auth/signin', { email, password });
+    return ApiService.postauth<AuthResponse>('/api/gateway/v1/auth/signin', { email, password });
+  }
+
+  static async getManufactures() {
+    return ApiService.get<unknown>('/api/gateway/v1/inventry/car-manufacturers-all');
   }
 
   static async logout() {
