@@ -60,14 +60,14 @@ export default function ManufacturersPage() {
 
   useEffect(() => {
     const queryManufacturers = async () => {
-      await AuthService.getManufactures();
+      try {
+        const data = await AuthService.getManufactures();
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    try {
-      const data = queryManufacturers();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
+    queryManufacturers();
   }, []);
 
   return (

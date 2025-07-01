@@ -5,21 +5,19 @@ import { axiosInstance, axiosInstanceAuth } from '@/lib/axios';
 export class ApiService {
   static async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
     const response = await axiosInstance.get<T>(url, config);
-    return response.data;
-  }
-
-  static async getauth<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    const response = await axiosInstanceAuth.get<T>(url, config);
+    console.log(response.data, 'Get Data====================================');
     return response.data;
   }
 
   static async post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
     const response = await axiosInstance.post<T>(url, data, config);
+    console.log(response.data, 'Login Data====================================');
     return response.data;
   }
 
   static async postauth<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
     const response = await axiosInstanceAuth.post<T>(url, data, config);
+    console.log(response.data, 'Login Data====================================');
     return response.data;
   }
 

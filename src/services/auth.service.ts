@@ -12,11 +12,13 @@ interface AuthResponse {
 
 export class AuthService {
   static async login(email: string, password: string) {
-    return ApiService.postauth<AuthResponse>('/api/gateway/v1/auth/signin', { email, password });
+    return ApiService.post<AuthResponse>('/api/gateway/v1/auth/signin', { email, password });
   }
 
   static async getManufactures() {
-    return ApiService.get<unknown>('/api/gateway/v1/inventry/car-manufacturers-all');
+    const data = ApiService.get<unknown>('/api/gateway/v1/inventry/car-manufacturers-all');
+    console.log(data, 'Data=============================================;');
+    return data;
   }
 
   static async logout() {
